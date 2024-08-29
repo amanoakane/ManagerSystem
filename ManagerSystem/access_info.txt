@@ -1,0 +1,4 @@
+UserID: 123456, Resources: resource C
+UserID: 123456, Resources: resource a
+UserID: 123456, Resources: resource A
+UserID: 123456, Resources: resource B
