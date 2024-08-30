@@ -13,6 +13,10 @@ import java.util.Map;
 public class AdminService {
     private static final String ACCESS_INFO_FILE = "access_info.txt";
 
+    public FileWriter createFileWriter(String fileName, boolean append) throws IOException {
+        return new FileWriter(fileName, append);
+    }
+
     public ResponseEntity<String> writeAcess(String role, Map<String, Object> accessRequest) {
         if (!"admin".equals(role)) {
             return ResponseEntity.status(403).body("Access denied: Admin role required.");
@@ -24,7 +28,7 @@ public class AdminService {
             return ResponseEntity.badRequest().body("Invalid request body: userId and endpoint should not be null");
         }
 
-        try (FileWriter writer = new FileWriter(ACCESS_INFO_FILE, true)) {
+        try (FileWriter writer = createFileWriter(ACCESS_INFO_FILE, true)) {
             writer.write("UserID: " + userId + ", Resources: " + String.join(",", resources) + "\n");
         } catch (IOException e) {
             return ResponseEntity.status(500).body("Error saving access information.");

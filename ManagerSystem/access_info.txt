@@ -3,3 +3,8 @@ UserID: 123456, Resources: resource a
 UserID: 123456, Resources: resource A
 UserID: 123456, Resources: resource B
 UserID: 123, Resources: Resource A
+UserID: 456, Resources: Resource DUserID: 1, Resources: Resource1,Resource2
+UserID: 1, Resources: Resource1,Resource2
+UserID: 1, Resources: Resource1,Resource2
+UserID: 1, Resources: Resource1,Resource2
+UserID: 1, Resources: Resource1,Resource2
