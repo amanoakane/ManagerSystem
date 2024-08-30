@@ -26,8 +26,7 @@ public class AdminService {
 
         try (FileWriter writer = new FileWriter(ACCESS_INFO_FILE, true)) {
             writer.write("UserID: " + userId + ", Resources: " + String.join(",", resources) + "\n");
-        } catch (
-                IOException e) {
+        } catch (IOException e) {
             return ResponseEntity.status(500).body("Error saving access information.");
         }
         return ResponseEntity.ok("User access granted successfully");

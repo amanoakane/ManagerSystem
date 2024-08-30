@@ -20,8 +20,7 @@ public class RoleInterceptor implements HandlerInterceptor {
 
             ObjectMapper objectMapper = new ObjectMapper();
             Map<String, Object> credentialMap = objectMapper.readValue(credentials, Map.class);
-            if (!credentialMap.containsKey("userId") || !credentialMap.containsKey("role")
-                    || !credentialMap.containsKey("accountName")) {
+            if (!credentialMap.containsKey("userId") || !credentialMap.containsKey("role")) {
                 throw new SecurityException("Invalid credentials format");
             }
 
